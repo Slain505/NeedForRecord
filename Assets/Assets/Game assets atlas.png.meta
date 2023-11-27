@@ -1,0 +1,961 @@
+fileFormatVersion: 2
+guid: 4e4b36cf5af36b540a95b6bb2c03e2f1
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 328, y: 1825, z: 4214, w: 392}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Game assets atlas_5
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 2582
+        width: 423
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55e64d7aeeeace140acfe5b4a18613cc
+      internalID: -267729555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Game assets atlas_13
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 1865
+        width: 448
+        height: 442
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d32cb5f3b29e8a419f86dfb55129a8d
+      internalID: 621375239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Game assets atlas_20
+      rect:
+        serializedVersion: 2
+        x: 1713
+        y: 1905
+        width: 175
+        height: 402
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b8fa8f3ca8e3c5459f1a5a97fbb77fe
+      internalID: 1481854881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Game assets atlas_37
+      rect:
+        serializedVersion: 2
+        x: 1222
+        y: 1926
+        width: 396
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b75fcb38ac8b2d488f0cc6b76cc23d1
+      internalID: -35263606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Game assets atlas_41
+      rect:
+        serializedVersion: 2
+        x: 334
+        y: 2013
+        width: 106
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1572d0856b5276a488bfd64017b5add9
+      internalID: -685545718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Game assets atlas_42
+      rect:
+        serializedVersion: 2
+        x: 948
+        y: 2022
+        width: 101
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 183c2bb4674713d40ad85f83a76165a7
+      internalID: 1059739241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Game assets atlas_47
+      rect:
+        serializedVersion: 2
+        x: 2647
+        y: 1879
+        width: 217
+        height: 258
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9dc3c72d318eef4aaddab0694dc043b
+      internalID: -915706856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Game assets atlas_62
+      rect:
+        serializedVersion: 2
+        x: 2394
+        y: 1877
+        width: 151
+        height: 171
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78fd74b22d652d149ba92a4e248344b4
+      internalID: -1867593698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Game assets atlas_70
+      rect:
+        serializedVersion: 2
+        x: 3993
+        y: 1936
+        width: 730
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8196ba128850c7479d7eae74a0099a5
+      internalID: 1109183247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Game assets atlas_72
+      rect:
+        serializedVersion: 2
+        x: 3136
+        y: 1883
+        width: 748
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de9b0cd6179202548aac48a5e6ec60b3
+      internalID: -289829090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Game assets atlas_92
+      rect:
+        serializedVersion: 2
+        x: 3993
+        y: 1821
+        width: 730
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7165da568861aa54ea4501d81f6eee01
+      internalID: -1752728412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Game assets atlas_99
+      rect:
+        serializedVersion: 2
+        x: 2656
+        y: 1645
+        width: 208
+        height: 207
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc5e03619dc3d3d40955da9805b31120
+      internalID: -1955995315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Game assets atlas_110
+      rect:
+        serializedVersion: 2
+        x: 2401
+        y: 1641
+        width: 169
+        height: 171
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c22c8ee3784f59646ab8561dd9ae11b0
+      internalID: 1752799384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Game assets atlas_114
+      rect:
+        serializedVersion: 2
+        x: 3993
+        y: 1705
+        width: 730
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5252cab8ef06b004f90d6de250252199
+      internalID: -749438823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Game assets atlas_116
+      rect:
+        serializedVersion: 2
+        x: 3293
+        y: 1557
+        width: 168
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1061a564df511274cb750d7569b49e64
+      internalID: 1855873290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Game assets atlas_120
+      rect:
+        serializedVersion: 2
+        x: 3993
+        y: 1609
+        width: 730
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c4b8089f6ac34e4bbae3c1ff8ed7916
+      internalID: 225372699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Game assets atlas_125
+      rect:
+        serializedVersion: 2
+        x: 2647
+        y: 1378
+        width: 213
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 979092c436dd79c4f845ba3b9f61491c
+      internalID: -413726988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Game assets atlas_130
+      rect:
+        serializedVersion: 2
+        x: 2882
+        y: 1428
+        width: 143
+        height: 147
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38578a6cab0d9884085fbf00423d622a
+      internalID: -1692072191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Game assets atlas_146
+      rect:
+        serializedVersion: 2
+        x: 313
+        y: 1022
+        width: 354
+        height: 329
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77d1b1c30a301eb41ae771b39fd3f812
+      internalID: -2118081969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Game assets atlas_148
+      rect:
+        serializedVersion: 2
+        x: 883
+        y: 527
+        width: 572
+        height: 572
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d42d1955db48ac64f9e5af69306c73fa
+      internalID: 1531108892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Game assets atlas_149
+      rect:
+        serializedVersion: 2
+        x: 2818
+        y: 542
+        width: 448
+        height: 557
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5646b978781a3b742b0543cdd1ea2ed9
+      internalID: 1091995569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Game assets atlas_153
+      rect:
+        serializedVersion: 2
+        x: 4191
+        y: 847
+        width: 856
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6762853769b96b4fb551371c950fadc
+      internalID: 819726460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Game assets atlas_162
+      rect:
+        serializedVersion: 2
+        x: 413
+        y: 710
+        width: 118
+        height: 181
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02d56b80991f66242aab7d4ee8685687
+      internalID: 1142807317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Game assets atlas_164
+      rect:
+        serializedVersion: 2
+        x: 2198
+        y: 527
+        width: 464
+        height: 433
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd54c66e418c2524e8a33bd960d48373
+      internalID: 898906519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Game assets atlas_167
+      rect:
+        serializedVersion: 2
+        x: 3417
+        y: 561
+        width: 392
+        height: 405
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf1fa7783c4a2084089f27e3ab2bd29c
+      internalID: 1701375965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Game assets atlas_172
+      rect:
+        serializedVersion: 2
+        x: 1613
+        y: 565
+        width: 438
+        height: 198
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6aec38a1b1c7a5b46b09aee0e4798c3c
+      internalID: 1393291221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Game assets atlas_176
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 542
+        width: 122
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f8a5b781889c514db1726f0260471e7
+      internalID: 1558402210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Game assets atlas_11
+      rect:
+        serializedVersion: 2
+        x: 4207
+        y: 673
+        width: 835
+        height: 173
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0bcc1251a55b374685ff44d7d24fb31
+      internalID: 2038350875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Game assets atlas_12
+      rect:
+        serializedVersion: 2
+        x: 4228
+        y: 503
+        width: 598
+        height: 147
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26305c6cbb9c6954fa03a102efbee936
+      internalID: 1677328644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 1537655665
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Game assets atlas_0: 1404915104
+      Game assets atlas_1: -1658060333
+      Game assets atlas_10: 1988218335
+      Game assets atlas_100: -1590073589
+      Game assets atlas_101: -1069178504
+      Game assets atlas_102: 161894336
+      Game assets atlas_103: 484608700
+      Game assets atlas_104: -588771307
+      Game assets atlas_105: -15220046
+      Game assets atlas_106: -1236029117
+      Game assets atlas_107: -1357873838
+      Game assets atlas_108: -1921951231
+      Game assets atlas_109: -148348725
+      Game assets atlas_11: 2038350875
+      Game assets atlas_110: 1752799384
+      Game assets atlas_111: -1057629657
+      Game assets atlas_112: 287986151
+      Game assets atlas_113: 2033763222
+      Game assets atlas_114: -749438823
+      Game assets atlas_115: 1216058847
+      Game assets atlas_116: 1855873290
+      Game assets atlas_117: 516277407
+      Game assets atlas_118: 608996680
+      Game assets atlas_119: -645684862
+      Game assets atlas_12: 1677328644
+      Game assets atlas_120: 225372699
+      Game assets atlas_121: 1426651646
+      Game assets atlas_122: 1682597905
+      Game assets atlas_123: -140495875
+      Game assets atlas_124: 833332059
+      Game assets atlas_125: -413726988
+      Game assets atlas_126: -564678689
+      Game assets atlas_127: 1783129648
+      Game assets atlas_128: -2019364663
+      Game assets atlas_129: 1380860809
+      Game assets atlas_13: 621375239
+      Game assets atlas_130: -1692072191
+      Game assets atlas_131: -1315019884
+      Game assets atlas_132: -747131582
+      Game assets atlas_133: -56399064
+      Game assets atlas_134: -708542222
+      Game assets atlas_135: -1087481635
+      Game assets atlas_136: -1222823193
+      Game assets atlas_137: -623169310
+      Game assets atlas_138: -1580485123
+      Game assets atlas_139: -150745637
+      Game assets atlas_14: -1191919736
+      Game assets atlas_140: -359680583
+      Game assets atlas_141: -1766947866
+      Game assets atlas_142: 1746352767
+      Game assets atlas_143: -497086416
+      Game assets atlas_144: 567367293
+      Game assets atlas_145: -2118084544
+      Game assets atlas_146: -2118081969
+      Game assets atlas_147: 1773059705
+      Game assets atlas_148: 1531108892
+      Game assets atlas_149: 1091995569
+      Game assets atlas_15: 1640101720
+      Game assets atlas_150: 817924149
+      Game assets atlas_151: -290341616
+      Game assets atlas_152: -160179559
+      Game assets atlas_153: 819726460
+      Game assets atlas_154: -709360648
+      Game assets atlas_155: -1067475503
+      Game assets atlas_156: -145184247
+      Game assets atlas_157: -812598538
+      Game assets atlas_158: -468238824
+      Game assets atlas_159: 496191407
+      Game assets atlas_16: -1881723468
+      Game assets atlas_160: 893216401
+      Game assets atlas_161: 1675036970
+      Game assets atlas_162: 1142807317
+      Game assets atlas_163: 1045742575
+      Game assets atlas_164: 898906519
+      Game assets atlas_165: -453926089
+      Game assets atlas_166: -1537971163
+      Game assets atlas_167: 1701375965
+      Game assets atlas_168: 298751683
+      Game assets atlas_169: 453821098
+      Game assets atlas_17: -900831255
+      Game assets atlas_170: 1808534794
+      Game assets atlas_171: -1758599376
+      Game assets atlas_172: 1393291221
+      Game assets atlas_173: 958968188
+      Game assets atlas_174: 26388987
+      Game assets atlas_175: -1892990843
+      Game assets atlas_176: 1558402210
+      Game assets atlas_177: 1663885803
+      Game assets atlas_178: -410538646
+      Game assets atlas_179: -1574025049
+      Game assets atlas_18: 1532952558
+      Game assets atlas_180: -467887237
+      Game assets atlas_181: 1526009247
+      Game assets atlas_182: 423167121
+      Game assets atlas_183: 1446404378
+      Game assets atlas_184: -214123173
+      Game assets atlas_185: 1688303921
+      Game assets atlas_186: 609437890
+      Game assets atlas_187: -172826064
+      Game assets atlas_188: -1898887117
+      Game assets atlas_189: 1776236690
+      Game assets atlas_19: -2123044939
+      Game assets atlas_190: 732857511
+      Game assets atlas_191: 1983928827
+      Game assets atlas_192: 1992417896
+      Game assets atlas_193: -1632582633
+      Game assets atlas_194: -1790498223
+      Game assets atlas_195: -676037692
+      Game assets atlas_196: 813471182
+      Game assets atlas_197: -387160266
+      Game assets atlas_198: 142705521
+      Game assets atlas_199: 103309085
+      Game assets atlas_2: 1085615400
+      Game assets atlas_20: 1481854881
+      Game assets atlas_200: -741168921
+      Game assets atlas_201: -1049453869
+      Game assets atlas_202: -1697734484
+      Game assets atlas_203: -191547278
+      Game assets atlas_204: -1199165649
+      Game assets atlas_21: -969683464
+      Game assets atlas_22: -1408205275
+      Game assets atlas_23: -1541995568
+      Game assets atlas_24: 1171351685
+      Game assets atlas_25: -682164592
+      Game assets atlas_26: 1226269791
+      Game assets atlas_27: -1867841476
+      Game assets atlas_28: 356140835
+      Game assets atlas_29: 538352318
+      Game assets atlas_3: -1486855360
+      Game assets atlas_30: 93349349
+      Game assets atlas_31: 939483951
+      Game assets atlas_32: -918454378
+      Game assets atlas_33: 1935817038
+      Game assets atlas_34: 213555651
+      Game assets atlas_35: -1047537294
+      Game assets atlas_36: -1508306855
+      Game assets atlas_37: -35263606
+      Game assets atlas_38: 446570985
+      Game assets atlas_39: -286289881
+      Game assets atlas_4: -317277153
+      Game assets atlas_40: 159442486
+      Game assets atlas_41: -685545718
+      Game assets atlas_42: 1059739241
+      Game assets atlas_43: 33289308
+      Game assets atlas_44: 375571600
+      Game assets atlas_45: 2144954497
+      Game assets atlas_46: -1501836305
+      Game assets atlas_47: -915706856
+      Game assets atlas_48: 970513568
+      Game assets atlas_49: -1824842811
+      Game assets atlas_5: -267729555
+      Game assets atlas_50: 1352628673
+      Game assets atlas_51: -1527660668
+      Game assets atlas_52: 1261457214
+      Game assets atlas_53: -557896188
+      Game assets atlas_54: 1368086351
+      Game assets atlas_55: 781036285
+      Game assets atlas_56: -71518953
+      Game assets atlas_57: -1768795436
+      Game assets atlas_58: -522559248
+      Game assets atlas_59: -263717631
+      Game assets atlas_6: 227121182
+      Game assets atlas_60: 1393638032
+      Game assets atlas_61: 701626353
+      Game assets atlas_62: -1867593698
+      Game assets atlas_63: 1308960000
+      Game assets atlas_64: -1903913136
+      Game assets atlas_65: -1655499434
+      Game assets atlas_66: -567703616
+      Game assets atlas_67: -1070027531
+      Game assets atlas_68: -1075545622
+      Game assets atlas_69: -135546712
+      Game assets atlas_7: 1359615606
+      Game assets atlas_70: 1109183247
+      Game assets atlas_71: -1845177250
+      Game assets atlas_72: -289829090
+      Game assets atlas_73: 215936492
+      Game assets atlas_74: -101806747
+      Game assets atlas_75: -604996501
+      Game assets atlas_76: -665761890
+      Game assets atlas_77: -456898172
+      Game assets atlas_78: 1388928290
+      Game assets atlas_79: 212392624
+      Game assets atlas_8: -1330425151
+      Game assets atlas_80: 1955473047
+      Game assets atlas_81: 1133098019
+      Game assets atlas_82: 1812659903
+      Game assets atlas_83: -1412935662
+      Game assets atlas_84: -877262979
+      Game assets atlas_85: 1336483307
+      Game assets atlas_86: -906787524
+      Game assets atlas_87: -1552124392
+      Game assets atlas_88: 1844899594
+      Game assets atlas_89: -1817221138
+      Game assets atlas_9: 1960271105
+      Game assets atlas_90: -1064367611
+      Game assets atlas_91: -1143749235
+      Game assets atlas_92: -1752728412
+      Game assets atlas_93: 1290310950
+      Game assets atlas_94: 673783614
+      Game assets atlas_95: -342463700
+      Game assets atlas_96: 377613075
+      Game assets atlas_97: -1967057988
+      Game assets atlas_98: -526814518
+      Game assets atlas_99: -1955995315
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
