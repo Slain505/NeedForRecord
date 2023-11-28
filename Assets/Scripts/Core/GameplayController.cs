@@ -26,6 +26,7 @@ namespace Core
             player.Setup(playerConfig);
         }
         
+        //todo: implement Police
         private void SpawnEnemy()
         {
             Debug.Log("Spawn enemy called.");
