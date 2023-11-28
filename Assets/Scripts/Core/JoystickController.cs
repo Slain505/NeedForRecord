@@ -10,7 +10,6 @@ namespace Core
 
         private void Start()
         {
-            // Настройте эти ссылки с помощью вашего UI
             joystickBackground = GetComponent<RectTransform>();
             joystickHandle = transform.GetChild(0).GetComponent<RectTransform>();
             joystickHandle.anchoredPosition = Vector2.zero;
@@ -22,8 +21,7 @@ namespace Core
             Vector2 radius = joystickBackground.sizeDelta / 2;
             Vector2 direction = (eventData.position - position) / (radius);
             direction = (direction.magnitude > 1) ? direction.normalized : direction;
-
-            // Переместите ручку джойстика
+            
             joystickHandle.anchoredPosition = direction * radius;
         }
 
@@ -37,7 +35,7 @@ namespace Core
             joystickHandle.anchoredPosition = Vector2.zero;
         }
 
-        // Функция для получения ввода из других скриптов
+        
         public Vector2 GetInputDirection()
         {
             return joystickHandle.anchoredPosition / (joystickBackground.sizeDelta / 2);
