@@ -6,7 +6,6 @@ namespace Game.Player
     public class PlayerConfig
     {
         public float Acceleration;
-        //public float Brake;
         public float TurnSpeed;
         public int Health;
     }

@@ -11,13 +11,13 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Player
+  - Coin
+  - Magnet
+  - Shield
+  - Life
+  - Obstacle
+  - BoosterPickUp
   - 
   - 
   - 

@@ -19,29 +19,18 @@ namespace Game
         {
             Instance = this;
         }
-
         
         private void SpawnPlayer()
         {
             var playerStart = Instantiate(playerPrefab, playerSpawnPoint.position, Quaternion.identity, transform);
             player = playerStart.GetComponent<Player.Player>();
-            player.Setup(new PlayerModel(playerConfig));
+            player.Setup(playerConfig);
         }
         
         private void SpawnEnemy()
         {
             Debug.Log("Spawn enemy called.");
             
-            //var g = Game.Get<ObjectPoolsController>().EnemyPool.GetObject();
-            //g.transform.position = enemySpawnPoint.transform.position +
-            //                       new Vector3(
-            //                           Random.Range(spawnerConfig.SpawnPosition.x, spawnerConfig.SpawnPosition.y),
-            //                           0, 0);
-            //var enemy = g.GetComponent<Enemy>();
-            //enemy.Setup(new EnemyModel(enemyConfig));
-            
-            //enemy.onDie -= HandleEnemyDeath;
-            //enemy.onDie += HandleEnemyDeath;
         }
         
         private void Start()
