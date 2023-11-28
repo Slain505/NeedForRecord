@@ -1,20 +1,17 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using Code.Game;
+using Collectables;
 using Core;
 using DG.Tweening;
-using Game.Player;
 using Obstacles;
+using UI;
 using UnityEngine;
 
-namespace Game.Player
+namespace Player
 {
     public class Player : MonoBehaviour
     {
-        [SerializeField]
-        private List<Booster> _boosters;
-        private PedalsController _pedalsController;
+        [SerializeField] private List<Booster> _boosters;
         private PlayerController _playerController;
         private Rigidbody2D rb;
         
@@ -54,14 +51,16 @@ namespace Game.Player
         private int Die()
         {
             Destroy(gameObject);
-            Level.Instance.GameOver();
+            Level.Level.Instance.GameOver();
+            Popups.Instance.OnPlayerDied();
+            BoosterProgressBar.Instance.IsAlive = false;
             return 0;
         }
 
         void Start()
         {
-            _playerController = gameObject.AddComponent<PlayerController>(); 
-            _pedalsController = GameObject.Find("Canvas/PedalControls").GetComponent<PedalsController>();
+            HealthProgressBar.Instance.SetHealth(Health);
+            _playerController = gameObject.AddComponent<PlayerController>();
         }
 
         void Update()
@@ -79,11 +78,11 @@ namespace Game.Player
                     break;
             }
 
-            if (_pedalsController.IsGasButtonPressed)
+            if (PedalsController.Instance.IsGasButtonPressed)
             {
                 MoveForward();
             }
-            else if(_pedalsController.IsBrakeButtonPressed)
+            else if(PedalsController.Instance.IsBrakeButtonPressed)
             {
                 MoveBackward();
             }
@@ -111,7 +110,7 @@ namespace Game.Player
             {
                 coinPickUp.transform.DOMove(this.transform.position, 0.5f).OnComplete(() =>
                 {
-                    Coins++;
+                    Coins += 10;
                     Destroy(coinPickUp.gameObject);
                 });
             }
@@ -120,38 +119,68 @@ namespace Game.Player
                 if (!Invincible)
                 {
                     Health -= obstacle.Damage;
-                    Level.Instance.Speed -= obstacle.SpeedPenalty;
+                    HealthProgressBar.Instance.SetHealth(Health);
+                    StartCoroutine(OnSlowByObstacle(obstacle.SpeedPenalty));
                 }
                 Destroy(obstacle.gameObject);
+            }
+            else if(other.TryGetComponent<Lifes> (out var lifes))
+            {
+                coinPickUp.transform.DOMove(this.transform.position, 0.5f).OnComplete(() =>
+                {
+                    if(Health < 100)
+                    {
+                        Health += 25;
+                    }
+                    if(Health > 100)
+                    {
+                        Health = 100;
+                    }
+                
+                    HealthProgressBar.Instance.SetHealth(Health);
+                    Destroy(lifes.gameObject);
+                });
             }
         }
 
         private void MoveLeft()
         {
-            Vector2 pos = transform.position;
-            pos.x -= TurnSpeed * Time.deltaTime;
-            transform.position = pos;
+            if (transform.position.x >= -1.5f)
+            {
+                Vector2 pos = transform.position;
+                pos.x -= TurnSpeed * Time.deltaTime;
+                transform.position = pos;
+            }
         }
 
         private void MoveRight()
         {
-            Vector2 pos = transform.position;
-            pos.x += TurnSpeed * Time.deltaTime;
-            transform.position = pos;
+            if (transform.position.x <= 1.5f)
+            {
+                Vector2 pos = transform.position;
+                pos.x += TurnSpeed * Time.deltaTime;
+                transform.position = pos;
+            }
         }
         
         private void MoveForward()
         {
-            Vector2 pos = transform.position;
-            pos.y += Acceleration * Time.deltaTime;
-            transform.position = pos;
+            if (transform.position.y <= 3.5f)
+            {
+                Vector2 pos = transform.position;
+                pos.y += Acceleration * Time.deltaTime;
+                transform.position = pos;
+            }
         }
         
         private void MoveBackward()
         {
-            Vector2 pos = transform.position;
-            pos.y -= Acceleration * Time.deltaTime;
-            transform.position = pos;
+            if (transform.position.y >= -4.5f)
+            {
+                Vector2 pos = transform.position;
+                pos.y -= Acceleration * Time.deltaTime;
+                transform.position = pos;
+            }
         }
 
         public void Setup(PlayerConfig config)
@@ -159,6 +188,13 @@ namespace Game.Player
             Acceleration = config.Acceleration;
             Health = config.Health;
             TurnSpeed = config.TurnSpeed;
+        }
+        
+        private IEnumerator OnSlowByObstacle(float speedPenalty)
+        {
+            Level.Level.Instance.Speed -= speedPenalty;
+            yield return new WaitForSeconds(15f);
+            Level.Level.Instance.Speed += speedPenalty;
         }
     }
 }

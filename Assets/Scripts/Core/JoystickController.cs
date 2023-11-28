@@ -1,43 +1,46 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class JoystickController : MonoBehaviour, IDragHandler, IPointerUpHandler, IPointerDownHandler
+namespace Core
 {
-    private RectTransform joystickBackground;
-    private RectTransform joystickHandle;
-
-    private void Start()
+    public class JoystickController : MonoBehaviour, IDragHandler, IPointerUpHandler, IPointerDownHandler
     {
-        // Настройте эти ссылки с помощью вашего UI
-        joystickBackground = GetComponent<RectTransform>();
-        joystickHandle = transform.GetChild(0).GetComponent<RectTransform>();
-        joystickHandle.anchoredPosition = Vector2.zero;
-    }
+        private RectTransform joystickBackground;
+        private RectTransform joystickHandle;
 
-    public void OnDrag(PointerEventData eventData)
-    {
-        Vector2 position = RectTransformUtility.WorldToScreenPoint(Camera.main, joystickBackground.position);
-        Vector2 radius = joystickBackground.sizeDelta / 2;
-        Vector2 direction = (eventData.position - position) / (radius);
-        direction = (direction.magnitude > 1) ? direction.normalized : direction;
+        private void Start()
+        {
+            // Настройте эти ссылки с помощью вашего UI
+            joystickBackground = GetComponent<RectTransform>();
+            joystickHandle = transform.GetChild(0).GetComponent<RectTransform>();
+            joystickHandle.anchoredPosition = Vector2.zero;
+        }
 
-        // Переместите ручку джойстика
-        joystickHandle.anchoredPosition = direction * radius;
-    }
+        public void OnDrag(PointerEventData eventData)
+        {
+            Vector2 position = RectTransformUtility.WorldToScreenPoint(Camera.main, joystickBackground.position);
+            Vector2 radius = joystickBackground.sizeDelta / 2;
+            Vector2 direction = (eventData.position - position) / (radius);
+            direction = (direction.magnitude > 1) ? direction.normalized : direction;
 
-    public void OnPointerDown(PointerEventData eventData)
-    {
-        OnDrag(eventData);
-    }
+            // Переместите ручку джойстика
+            joystickHandle.anchoredPosition = direction * radius;
+        }
 
-    public void OnPointerUp(PointerEventData eventData)
-    {
-        joystickHandle.anchoredPosition = Vector2.zero;
-    }
+        public void OnPointerDown(PointerEventData eventData)
+        {
+            OnDrag(eventData);
+        }
 
-    // Функция для получения ввода из других скриптов
-    public Vector2 GetInputDirection()
-    {
-        return joystickHandle.anchoredPosition / (joystickBackground.sizeDelta / 2);
+        public void OnPointerUp(PointerEventData eventData)
+        {
+            joystickHandle.anchoredPosition = Vector2.zero;
+        }
+
+        // Функция для получения ввода из других скриптов
+        public Vector2 GetInputDirection()
+        {
+            return joystickHandle.anchoredPosition / (joystickBackground.sizeDelta / 2);
+        }
     }
 }

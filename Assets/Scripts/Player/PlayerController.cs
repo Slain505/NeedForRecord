@@ -1,9 +1,7 @@
-﻿using System;
-using Code.Game;
+﻿using Core;
 using UnityEngine;
-using UnityEngine.Serialization;
 
-namespace Game.Player
+namespace Player
 {
     public enum MoveDirection
     {

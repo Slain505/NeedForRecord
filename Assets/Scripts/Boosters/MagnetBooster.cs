@@ -1,6 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using Core;
+using UI;
 using UnityEngine;
 
 namespace Boosters
@@ -16,6 +15,8 @@ namespace Boosters
             base.ActivateEffect();
             _magnetCollider.enabled = true;
             _isActive = true;
+            BoosterProgressBar.Instance.IsMagnetActive = true;
+            BoosterProgressBar.Instance.SetTime(15f);
         }
 
         public override void DeactivateEffect()
@@ -24,6 +25,8 @@ namespace Boosters
             base.DeactivateEffect();
             _magnetCollider.enabled = false;
             _isActive = false;
+            BoosterProgressBar.Instance.IsMagnetActive = false;
+            BoosterProgressBar.Instance.TurnOffMagnetProgressBar();
         }
     }
 }

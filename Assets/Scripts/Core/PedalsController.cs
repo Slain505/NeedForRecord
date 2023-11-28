@@ -1,8 +1,7 @@
-using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-namespace Code.Game
+namespace Core
 {
     public class PedalsController : MonoBehaviour
     {
@@ -10,9 +9,12 @@ namespace Code.Game
         [SerializeField] private EventTrigger _brakeButton;
         public bool IsGasButtonPressed { get; private set; }
         public bool IsBrakeButtonPressed { get; private set; }
+        
+        public static PedalsController Instance { get; private set; }
 
         private void Awake()
         {
+            Instance = this;
             foreach (var a in _gasButton.triggers)
             {
                 if(a.eventID == EventTriggerType.PointerDown)

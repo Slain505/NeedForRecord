@@ -300,7 +300,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Visuals: {fileID: 6836956191493419658}
-  Type: 0
+  Type: 1
   Duration: 15
   _player: {fileID: 7743410545525718621}
 --- !u!1 &6836956191493419658
@@ -434,7 +434,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Visuals: {fileID: 2685097464850435924}
-  Type: 1
+  Type: 2
   Duration: 15
 --- !u!1 &7743410545525718610
 GameObject:
@@ -658,7 +658,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Visuals: {fileID: 3793568739743849785}
-  Type: 2
+  Type: 3
   Duration: 15
   _magnetCollider: {fileID: 2085286000379089964}
 --- !u!58 &2085286000379089964

@@ -1,7 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using Core;
-using UnityEngine;
+using UI;
 
 namespace Boosters
 {
@@ -12,16 +10,20 @@ namespace Boosters
         protected override void ActivateEffect()
         {
             base.ActivateEffect();
-            Level.Instance.Speed += 2;
+            Level.Level.Instance.Speed += 2;
             _isActive = true;
+            BoosterProgressBar.Instance.IsNitroActive = true;
+            BoosterProgressBar.Instance.SetTime(15f);
         }
 
         public override void DeactivateEffect()
         {
             if (!_isActive) return;
             base.DeactivateEffect();
-            Level.Instance.Speed -= 2;
+            Level.Level.Instance.Speed -= 2;
             _isActive = false;
+            BoosterProgressBar.Instance.IsNitroActive = false;
+            BoosterProgressBar.Instance.TurnOffNitroProgressBar();
         }
     }
 }

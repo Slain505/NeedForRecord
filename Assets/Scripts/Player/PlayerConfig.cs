@@ -1,6 +1,4 @@
-﻿using UnityEngine.Serialization;
-
-namespace Game.Player
+﻿namespace Player
 {
     [System.Serializable]
     public class PlayerConfig

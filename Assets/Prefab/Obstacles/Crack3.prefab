@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3282587223719806319}
   - component: {fileID: 620784121459854327}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 6503292877199709195}
   - component: {fileID: 5364952632438093442}
   - component: {fileID: 832637456721890607}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Crack3
   m_TagString: Untagged
   m_Icon: {fileID: 0}

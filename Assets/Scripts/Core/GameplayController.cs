@@ -1,8 +1,7 @@
-﻿using Game.Player;
-using Unity.VisualScripting;
+﻿using Player;
 using UnityEngine;
 
-namespace Game
+namespace Core
 {
     public class GameplayController : MonoBehaviour
     {

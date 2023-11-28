@@ -5,9 +5,10 @@ namespace Core
 {
     public enum BoosterType
     {
+        None,
         Shield,
         Nitro,
-        Magnet
+        Magnet,
     }
     
     public class Booster : MonoBehaviour
@@ -16,7 +17,14 @@ namespace Core
         public BoosterType Type;
         public float Duration = 15f;
         protected virtual void ActivateEffect() {Visuals.SetActive(true);}
-        public virtual void DeactivateEffect() {Visuals.SetActive(false);}
+        public virtual void DeactivateEffect() {Visuals.SetActive(false); }
+        
+        public static Booster Instance { get; private set; }
+
+        private void Awake()
+        {
+            Instance = this;
+        }
 
         public void Activate() 
         {
