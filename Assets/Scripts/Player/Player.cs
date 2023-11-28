@@ -126,7 +126,7 @@ namespace Player
             }
             else if(other.TryGetComponent<Lifes> (out var lifes))
             {
-                coinPickUp.transform.DOMove(this.transform.position, 0.5f).OnComplete(() =>
+                lifes.transform.DOMove(this.transform.position, 0.5f).OnComplete(() =>
                 {
                     if(Health < 100)
                     {
