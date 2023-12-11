@@ -15,6 +15,7 @@ namespace UI
         [SerializeField] private Sprite[] walkingSprites;
         [SerializeField] private SpriteRenderer spriteRenderer;
         private const float CountdownTime = 3f;
+        private const float WalkingTime = 2f;
         public delegate void CountdownFinished(); 
         public event CountdownFinished OnCountdownFinished;
         
@@ -34,7 +35,12 @@ namespace UI
         private void WalkingAnim()
         {
             StartCoroutine(ChangeSprite());
-            playerAnim.transform.DOMove(targetPosition.position, 3f).SetEase(Ease.Linear);
+            Vector3 adjustedTargetPosition = targetPosition.position + new Vector3(-0.7f, 0, 0);
+            playerAnim.transform.DOMove(adjustedTargetPosition, WalkingTime)
+                .SetEase(Ease.Linear).OnComplete(() => 
+                {
+                    spriteRenderer.sprite = walkingSprites[2];
+                });
         }
         
         IEnumerator StartCountdown()
@@ -61,21 +67,34 @@ namespace UI
         {
             float elapsedTime = 0;
 
-            while (elapsedTime < CountdownTime)
+            while (elapsedTime < WalkingTime)
             {
-                //spriteRenderer.sprite = walkingSprites[2];
-                //yield return new WaitForSeconds(0.1f);
                 spriteRenderer.sprite = walkingSprites[0];
                 yield return new WaitForSeconds(0.3f);
+                elapsedTime += 0.3f;
+                if (elapsedTime >= WalkingTime)
+                {
+                    break;
+                }
                 spriteRenderer.sprite = walkingSprites[2];
                 yield return new WaitForSeconds(0.1f);
+                elapsedTime += 0.1f;
+                if (elapsedTime >= WalkingTime)
+                {
+                    break;
+                }
                 spriteRenderer.sprite = walkingSprites[1];
                 yield return new WaitForSeconds(0.3f);
+                elapsedTime += 0.3f;
+                if (elapsedTime >= WalkingTime)
+                {
+                    break;
+                }
                 spriteRenderer.sprite = walkingSprites[2];
                 yield return new WaitForSeconds(0.1f);
-                elapsedTime += 0.6f;
+                elapsedTime += 0.1f;
 
-                if (elapsedTime >= CountdownTime)
+                if (elapsedTime >= WalkingTime)
                 {
                     break;
                 }
