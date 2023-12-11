@@ -18,6 +18,5 @@ namespace UI
         {
             _balanceText.text = balance.ToString();
         }
-        // Update is called once per frame
     }
 }

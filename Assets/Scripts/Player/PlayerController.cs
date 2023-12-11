@@ -42,7 +42,7 @@ namespace Player
             }
 
             var moveInput = _joystick.GetInputDirection();
-            Debug.Log(moveInput.x); 
+            //Debug.Log(moveInput.x); 
             
             if (moveInput.x < -0.01)
             { 
