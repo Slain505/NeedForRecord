@@ -19,7 +19,7 @@ namespace Player
             
             if (joystickObject != null)
             {
-                _joystick = joystickObject.GetComponent<JoystickController>();
+                _joystick = JoystickController.Instance;
             }
             
             
@@ -42,7 +42,7 @@ namespace Player
             }
 
             var moveInput = _joystick.GetInputDirection();
-            Debug.Log(moveInput.x); 
+            //Debug.Log(moveInput.x); 
             
             if (moveInput.x < -0.01)
             { 

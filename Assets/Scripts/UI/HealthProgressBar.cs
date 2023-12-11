@@ -16,7 +16,6 @@ namespace UI
             Instance = this;
         }
 
-        // Update is called once per frame
         void Update()
         {
             GetCurrentFill(_current, MinimumHealth, MaximumHealth, MaskHealth);

@@ -6,9 +6,9 @@ namespace Boosters
 {
     public class ShieldBooster : Booster 
     {
-        [SerializeField]
-        private Player.Player _player;
+        [SerializeField] private Player.Player _player;
         private bool _isActive;
+        
         protected override void ActivateEffect() 
         {
             base.ActivateEffect();

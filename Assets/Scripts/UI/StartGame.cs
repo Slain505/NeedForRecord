@@ -13,6 +13,9 @@ namespace UI
         {
             _playButton.onClick.AddListener(OnPlayButtonClicked);
             _text.DOColor(new Color(0, 0, 0, 0), 0.5f).SetLoops(-1, LoopType.Yoyo);
+            _text.transform.DOMoveY(transform.position.y + 0.1f, 0.5f)
+                .SetLoops(-1, LoopType.Yoyo)
+                .SetEase(Ease.InOutQuad);
         }
 
         private void OnPlayButtonClicked()

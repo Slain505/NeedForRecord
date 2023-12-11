@@ -1,3 +1,4 @@
+using UI;
 using UnityEngine;
 
 namespace Level
@@ -8,10 +9,13 @@ namespace Level
         private Vector2 _targetPosition;
         private float _lerpTime = 5.0f;
         private float _currentLerpTime;
-        private float _speed = 2f;
+        private float _speed = 0f;
         private float _savedSpeed;
         private int _score;
-    
+        
+        public bool IsGamePaused { get; set; }
+        private float _savedTimeScale { get; set; }
+
         public float Speed 
         {
             get
@@ -25,13 +29,20 @@ namespace Level
         }
     
         public static Level Instance { get; private set; }
-    
+        
         void Start()
         {
             Instance = this;
+            Countdown.Instance.OnCountdownFinished += GameStartState;
             _score = 0;
+            Time.timeScale = 1f;
         }
-    
+
+        private void GameStartState()
+        {
+            _speed = 2f;
+        }
+
         void Update()
         {
             MoveTiles();
@@ -40,25 +51,29 @@ namespace Level
 
         public void GameOver()
         {
+            Time.timeScale = 0f;
             _speed = 0;
         }
     
         public void Paused()
         {
             _savedSpeed = _speed;
-            _speed = 0;
+            Time.timeScale = 0f;
+            IsGamePaused = true;
         }
-    
+        
         public void Resumed()
         {
+            Time.timeScale = 1f;
             _speed = _savedSpeed;
+            IsGamePaused = false;
         }
 
         private void CountScore()
         {
             _score += (int)(_speed * (Time.deltaTime * 100));
             PlayerPrefs.SetInt("Score", _score);
-            Debug.Log(_score);
+            //Debug.Log(_score);
         }
 
         private void MoveTiles()
