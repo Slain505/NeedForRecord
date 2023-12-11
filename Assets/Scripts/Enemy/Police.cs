@@ -6,25 +6,26 @@ using DG.Tweening;
 using Obstacles;
 using UI;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Enemy
 {
     public class Police : MonoBehaviour
     {
-        [SerializeField] private Sprite[] policeSprites; 
-        [SerializeField] private SpriteRenderer SpriteRenderer;
-        [SerializeField] private float speedyPoliceSpeed;
-        [SerializeField] private float regularPoliceSpeed;
+        [SerializeField] private Sprite[] _policeSprites; 
+        [SerializeField] private SpriteRenderer _SpriteRenderer;
+        [SerializeField] private float _speedyPoliceSpeed;
+        [SerializeField] private float _regularPoliceSpeed;
+        private Vector3 _startPositionOffset = new Vector3(0, -6, 0);
+        private float _appearingDuration = 3f;
+        private float _moveDuration = 3f;
         public int Damage;
-        private Vector3 startPositionOffset = new Vector3(0, -6, 0);
-        private float appearingDuration = 3f;
-        private float moveDuration = 3f;
 
         //Appearing animation + chase logic
         private void PoliceAnimation()
         {
             Sequence sequence = DOTween.Sequence();
-            sequence.Append(transform.DOMove(transform.position - startPositionOffset, appearingDuration).SetEase(Ease.OutCubic))
+            sequence.Append(transform.DOMove(transform.position - _startPositionOffset, _appearingDuration).SetEase(Ease.OutCubic))
                 .Append(transform.DOMove(transform.position + new Vector3(0, 15, 0), CalculateDurationOfMove())).SetEase(Ease.Linear)
                 .AppendCallback(() => Destroy(gameObject));
         }
@@ -32,24 +33,24 @@ namespace Enemy
         //Bad naming - this method is calculating which Police sprite to use and how fast it should move 
         private float CalculateDurationOfMove()
         {
-            SpriteRenderer.sprite = policeSprites[UnityEngine.Random.Range(0, policeSprites.Length)];
-            if (SpriteRenderer.sprite == policeSprites[0])
+            _SpriteRenderer.sprite = _policeSprites[UnityEngine.Random.Range(0, _policeSprites.Length)];
+            if (_SpriteRenderer.sprite == _policeSprites[0])
             {
                 //Speedy version
-                return speedyPoliceSpeed;
+                return _speedyPoliceSpeed;
             }
-            else if (SpriteRenderer.sprite == policeSprites[1])
+            else if (_SpriteRenderer.sprite == _policeSprites[1])
             {
                 //Regular one
-                return regularPoliceSpeed;
+                return _regularPoliceSpeed;
             }
             //Default
-            return regularPoliceSpeed;
+            return _regularPoliceSpeed;
         }
         
         private void Start()
         {
-            Vector3 startPostion = transform.position + startPositionOffset;
+            Vector3 startPostion = transform.position + _startPositionOffset;
             transform.position = startPostion;
 
             PoliceAnimation();

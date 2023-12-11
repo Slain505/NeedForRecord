@@ -47,12 +47,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5566f2aef8b14639b4fe577142b87b0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  policeSprites:
+  _policeSprites:
   - {fileID: -13826999, guid: 081ba4c39e1690348b1787dd07df1b6d, type: 3}
   - {fileID: -1183604774, guid: 081ba4c39e1690348b1787dd07df1b6d, type: 3}
-  SpriteRenderer: {fileID: 2828539107371511886}
-  speedyPoliceSpeed: 5
-  regularPoliceSpeed: 10
+  _SpriteRenderer: {fileID: 2828539107371511886}
+  _speedyPoliceSpeed: 15
+  _regularPoliceSpeed: 5
   Damage: 100
 --- !u!70 &1354609640332813647
 CapsuleCollider2D:

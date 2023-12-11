@@ -9,11 +9,11 @@ namespace UI
 {
     public class Countdown : MonoBehaviour
     {
-        [SerializeField] private Text countdownText; 
-        [SerializeField] private Transform targetPosition;
-        [SerializeField] private GameObject playerAnim;
-        [SerializeField] private Sprite[] walkingSprites;
-        [SerializeField] private SpriteRenderer spriteRenderer;
+        [SerializeField] private Text _countdownText; 
+        [SerializeField] private Transform _targetPosition;
+        [SerializeField] private GameObject _playerAnim;
+        [SerializeField] private Sprite[] _walkingSprites;
+        [SerializeField] private SpriteRenderer _spriteRenderer;
         private const float CountdownTime = 3f;
         private const float WalkingTime = 2f;
         public delegate void CountdownFinished(); 
@@ -25,7 +25,7 @@ namespace UI
         {
             Instance = this;
 
-            if(countdownText != null)
+            if(_countdownText != null)
             {
                 StartCoroutine(StartCountdown());
                 WalkingAnim();
@@ -35,11 +35,11 @@ namespace UI
         private void WalkingAnim()
         {
             StartCoroutine(ChangeSprite());
-            Vector3 adjustedTargetPosition = targetPosition.position + new Vector3(-0.7f, 0, 0);
-            playerAnim.transform.DOMove(adjustedTargetPosition, WalkingTime)
+            Vector3 adjustedTargetPosition = _targetPosition.position + new Vector3(-0.7f, 0, 0);
+            _playerAnim.transform.DOMove(adjustedTargetPosition, WalkingTime)
                 .SetEase(Ease.Linear).OnComplete(() => 
                 {
-                    spriteRenderer.sprite = walkingSprites[2];
+                    _spriteRenderer.sprite = _walkingSprites[2];
                 });
         }
         
@@ -48,13 +48,13 @@ namespace UI
             float currCountdownValue = CountdownTime;
             while (currCountdownValue > 0)
             {
-                countdownText.text = currCountdownValue.ToString();
+                _countdownText.text = currCountdownValue.ToString();
                 yield return new WaitForSeconds(1.0f);
                 currCountdownValue--;
             }
 
-            countdownText.text = "Go!";
-            playerAnim.SetActive(false);
+            _countdownText.text = "Start!";
+            _playerAnim.SetActive(false);
             StopCoroutine(ChangeSprite());
             yield return new WaitForSeconds(1.0f); 
 
@@ -62,35 +62,35 @@ namespace UI
             OnCountdownFinished?.Invoke();
         }
         
-        //todo: refactor this to more beatuful and smooth animation
+        //todo: refactor this to more beautiful and smooth animation
         IEnumerator ChangeSprite()
         {
             float elapsedTime = 0;
 
             while (elapsedTime < WalkingTime)
             {
-                spriteRenderer.sprite = walkingSprites[0];
+                _spriteRenderer.sprite = _walkingSprites[0];
                 yield return new WaitForSeconds(0.3f);
                 elapsedTime += 0.3f;
                 if (elapsedTime >= WalkingTime)
                 {
                     break;
                 }
-                spriteRenderer.sprite = walkingSprites[2];
+                _spriteRenderer.sprite = _walkingSprites[2];
                 yield return new WaitForSeconds(0.1f);
                 elapsedTime += 0.1f;
                 if (elapsedTime >= WalkingTime)
                 {
                     break;
                 }
-                spriteRenderer.sprite = walkingSprites[1];
+                _spriteRenderer.sprite = _walkingSprites[1];
                 yield return new WaitForSeconds(0.3f);
                 elapsedTime += 0.3f;
                 if (elapsedTime >= WalkingTime)
                 {
                     break;
                 }
-                spriteRenderer.sprite = walkingSprites[2];
+                _spriteRenderer.sprite = _walkingSprites[2];
                 yield return new WaitForSeconds(0.1f);
                 elapsedTime += 0.1f;
 

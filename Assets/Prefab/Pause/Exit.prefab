@@ -68,8 +68,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.08, y: -3.9}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: -0.144, y: -3.692}
+  m_SizeDelta: {x: 174.478, y: 33.18}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &940663693653613575
 CanvasRenderer:
@@ -164,6 +164,7 @@ GameObject:
   - component: {fileID: 4670264960844815122}
   - component: {fileID: 2412831185243872020}
   - component: {fileID: 2561356021608501139}
+  - component: {fileID: 6521567090724644475}
   m_Layer: 5
   m_Name: Text (Legacy)
   m_TagString: Untagged
@@ -187,8 +188,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2.75, y: 1.33}
-  m_SizeDelta: {x: 562.87, y: 235.47}
+  m_AnchoredPosition: {x: -1, y: 2.4}
+  m_SizeDelta: {x: 605.46, y: 279.75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2412831185243872020
 CanvasRenderer:
@@ -211,7 +212,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 0.6156863, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -219,7 +220,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 6850998a58c621a48ab9eee5be2a4796, type: 3}
+    m_Font: {fileID: 12800000, guid: 40bf8380e1f85e14aaca54060ef87df1, type: 3}
     m_FontSize: 220
     m_FontStyle: 0
     m_BestFit: 1
@@ -232,3 +233,18 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Exit
+--- !u!114 &6521567090724644475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8525640914572294732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
+  m_EffectDistance: {x: 3.75, y: 2.32}
+  m_UseGraphicAlpha: 0

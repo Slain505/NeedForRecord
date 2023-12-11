@@ -7,9 +7,12 @@ namespace Core
     {
         private RectTransform joystickBackground;
         private RectTransform joystickHandle;
-
+        
+        public static JoystickController Instance { get; private set; }
+        
         private void Start()
         {
+            Instance = this;
             joystickBackground = GetComponent<RectTransform>();
             joystickHandle = transform.GetChild(0).GetComponent<RectTransform>();
             joystickHandle.anchoredPosition = Vector2.zero;

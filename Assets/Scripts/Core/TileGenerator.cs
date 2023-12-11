@@ -5,17 +5,30 @@ namespace Core
 {
     public class TileGenerator : MonoBehaviour
     {
-        public GameObject[] tilePrefabs;
-        private List<GameObject> activeTiles = new List<GameObject>();
-        private float spawnPos = 0;
-        private float tileLength = 9.992f;
-
         [SerializeField] private Transform _levelObject;
-        private int startTiles = 6;
+        public GameObject[] tilePrefabs;
+        private List<GameObject> _activeTiles = new List<GameObject>();
+        private float _spawnPos = 0;
+        private float _tileLength = 9.992f;
+        private int _startTiles = 6;
+
+        private void SpawnTile(int tileIndex)
+        {
+            GameObject nextTile = Instantiate(tilePrefabs[tileIndex], transform.up * _spawnPos, transform.rotation, _levelObject);
+            _activeTiles.Add(nextTile);
+            nextTile.transform.localPosition = transform.up * _spawnPos;
+            _spawnPos += _tileLength;
+        }
+        
+        private void DeleteTile()
+        {
+            Destroy(_activeTiles[0]);
+            _activeTiles.RemoveAt(0);
+        }
     
         void Start()
         {
-            for (int i = 0; i < startTiles; i++)
+            for (int i = 0; i < _startTiles; i++)
             {
                 SpawnTile(Random.Range(0,tilePrefabs.Length));
             }
@@ -24,9 +37,9 @@ namespace Core
         void Update()
         {
             var lastTilePosition = float.MinValue;
-            if (activeTiles.Count > 0)
+            if (_activeTiles.Count > 0)
             {
-                lastTilePosition = activeTiles[activeTiles.Count - 1].transform.position.y;
+                lastTilePosition = _activeTiles[_activeTiles.Count - 1].transform.position.y;
             }
 
             if (lastTilePosition < transform.position.y + 10)
@@ -34,19 +47,6 @@ namespace Core
                 SpawnTile(Random.Range(0, tilePrefabs.Length));
                 DeleteTile();
             }                             
-        }
-
-        private void SpawnTile(int tileIndex)
-        {
-            GameObject nextTile = Instantiate(tilePrefabs[tileIndex], transform.up * spawnPos, transform.rotation, _levelObject);
-            activeTiles.Add(nextTile);
-            nextTile.transform.localPosition = transform.up * spawnPos;
-            spawnPos += tileLength;
-        }
-        private void DeleteTile()
-        {
-            Destroy(activeTiles[0]);
-            activeTiles.RemoveAt(0);
         }
     }
 }

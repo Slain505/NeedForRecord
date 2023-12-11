@@ -14,7 +14,7 @@ namespace Player
     {
         [SerializeField] private List<Booster> _boosters;
         private PlayerController _playerController;
-        private Rigidbody2D rb;
+        private Rigidbody2D _rb;
         
         public static Player Instance { get; private set; }
         public bool Invincible { get; set; }
@@ -59,40 +59,61 @@ namespace Player
             CancelInvoke("SpawnEnemy");
             return 0;
         }
-
-        void Start()
+        
+        public void UpdateCoinBalance()
         {
-            Instance = this;
-            HealthProgressBar.Instance.SetHealth(Health);
-            _playerController = gameObject.AddComponent<PlayerController>();
+            var currentCoins = PlayerPrefs.GetInt("Coins");
+            PlayerPrefs.SetInt("Coins", currentCoins + _coins);
+        }
+
+        private void MoveLeft()
+        {
+            if (transform.position.x >= -1.5f)
+            {
+                Vector2 pos = transform.position;
+                pos.x -= TurnSpeed * Time.deltaTime;
+                transform.position = pos;
+            }
+        }
+
+        private void MoveRight()
+        {
+            if (transform.position.x <= 1.5f)
+            {
+                Vector2 pos = transform.position;
+                pos.x += TurnSpeed * Time.deltaTime;
+                transform.position = pos;
+            }
         }
         
-        void Update()
+        private void MoveForward()
         {
-            _playerController.HandelInputs();
-            switch (_playerController.CurrentMoveDirection)
+            if (transform.position.y <= 3.5f)
             {
-                case MoveDirection.Left:
-                    MoveLeft();
-                    break;
-                case MoveDirection.Right:
-                    MoveRight();
-                    break;
-                case MoveDirection.None:
-                    break;
+                Vector2 pos = transform.position;
+                pos.y += Acceleration * Time.deltaTime;
+                transform.position = pos;
             }
-
-            if (PedalsController.Instance.IsGasButtonPressed)
+        }
+        
+        private void MoveBackward()
+        {
+            if (transform.position.y >= -4.5f)
             {
-                MoveForward();
-            }
-            else if(PedalsController.Instance.IsBrakeButtonPressed)
-            {
-                MoveBackward();
+                Vector2 pos = transform.position;
+                pos.y -= Acceleration * Time.deltaTime;
+                transform.position = pos;
             }
         }
 
-        private void OnTriggerEnter2D(Collider2D other)
+        public void Setup(PlayerConfig config)
+        {
+            Acceleration = config.Acceleration;
+            Health = config.Health;
+            TurnSpeed = config.TurnSpeed;
+        }
+
+        private void CalculateCollision(Collider2D other)
         {
             if (other.TryGetComponent<BoosterPickUp>(out var boosterPickUp))
             {
@@ -154,65 +175,49 @@ namespace Player
                 });
             }
         }
-
-        public void UpdateCoinBalance()
-        {
-            var currentCoins = PlayerPrefs.GetInt("Coins");
-            PlayerPrefs.SetInt("Coins", currentCoins + _coins);
-        }
-
-        private void MoveLeft()
-        {
-            if (transform.position.x >= -1.5f)
-            {
-                Vector2 pos = transform.position;
-                pos.x -= TurnSpeed * Time.deltaTime;
-                transform.position = pos;
-            }
-        }
-
-        private void MoveRight()
-        {
-            if (transform.position.x <= 1.5f)
-            {
-                Vector2 pos = transform.position;
-                pos.x += TurnSpeed * Time.deltaTime;
-                transform.position = pos;
-            }
-        }
-        
-        private void MoveForward()
-        {
-            if (transform.position.y <= 3.5f)
-            {
-                Vector2 pos = transform.position;
-                pos.y += Acceleration * Time.deltaTime;
-                transform.position = pos;
-            }
-        }
-        
-        private void MoveBackward()
-        {
-            if (transform.position.y >= -4.5f)
-            {
-                Vector2 pos = transform.position;
-                pos.y -= Acceleration * Time.deltaTime;
-                transform.position = pos;
-            }
-        }
-
-        public void Setup(PlayerConfig config)
-        {
-            Acceleration = config.Acceleration;
-            Health = config.Health;
-            TurnSpeed = config.TurnSpeed;
-        }
         
         private IEnumerator OnSlowByObstacle(float speedPenalty)
         {
             Level.Level.Instance.Speed -= speedPenalty;
             yield return new WaitForSeconds(15f);
             Level.Level.Instance.Speed += speedPenalty;
+        }
+        
+        void Start()
+        {
+            Instance = this;
+            HealthProgressBar.Instance.SetHealth(Health);
+            _playerController = gameObject.AddComponent<PlayerController>();
+        }
+        
+        void Update()
+        {
+            _playerController.HandelInputs();
+            switch (_playerController.CurrentMoveDirection)
+            {
+                case MoveDirection.Left:
+                    MoveLeft();
+                    break;
+                case MoveDirection.Right:
+                    MoveRight();
+                    break;
+                case MoveDirection.None:
+                    break;
+            }
+
+            if (PedalsController.Instance.IsGasButtonPressed)
+            {
+                MoveForward();
+            }
+            else if(PedalsController.Instance.IsBrakeButtonPressed)
+            {
+                MoveBackward();
+            }
+        }
+
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+            CalculateCollision(other);
         }
     }
 }

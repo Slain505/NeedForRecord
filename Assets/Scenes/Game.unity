@@ -141,7 +141,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7474726166359645110, guid: 9618627b0906a9545986170ff9b03b7b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -91.03
+      value: -91.12
       objectReference: {fileID: 0}
     - target: {fileID: 7474726166359645110, guid: 9618627b0906a9545986170ff9b03b7b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -191,6 +191,7 @@ GameObject:
   - component: {fileID: 28597998}
   - component: {fileID: 28598000}
   - component: {fileID: 28597999}
+  - component: {fileID: 28598001}
   m_Layer: 5
   m_Name: Text (Legacy)
   m_TagString: Untagged
@@ -230,7 +231,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -239,10 +240,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 90064f7c91c327049ae3aa811b5d6e51, type: 3}
-    m_FontSize: 300
+    m_FontSize: 216
     m_FontStyle: 1
     m_BestFit: 1
-    m_MinSize: 10
+    m_MinSize: 2
     m_MaxSize: 300
     m_Alignment: 4
     m_AlignByGeometry: 1
@@ -259,6 +260,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 28597997}
   m_CullTransparentMesh: 1
+--- !u!114 &28598001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 28597997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 1, g: 1, b: 1, a: 1}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
 --- !u!1 &35346401
 GameObject:
   m_ObjectHideFlags: 0
@@ -549,6 +565,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b03d55156d917348b6cafee9043bdd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _levelObject: {fileID: 2115284813}
   tilePrefabs:
   - {fileID: 1091827063955820474, guid: 3c430019757566f478ce7d40f360f9d8, type: 3}
   - {fileID: 1091827063955820474, guid: cd39aa46fc6af5b48b30334fc7229365, type: 3}
@@ -570,7 +587,6 @@ MonoBehaviour:
   - {fileID: 1091827063955820474, guid: 0955854cdfb09464680a305a08670bb5, type: 3}
   - {fileID: 1091827063955820474, guid: 5617d8fb307a9e8488edf5154ff6e0f5, type: 3}
   - {fileID: 1091827063955820474, guid: d19e6257055c9ea44a4aa2e8a1f59f28, type: 3}
-  _levelObject: {fileID: 2115284813}
 --- !u!4 &75102162
 Transform:
   m_ObjectHideFlags: 0
@@ -2650,14 +2666,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 999bf1240a5b8c341a04d996eba8bacd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countdownText: {fileID: 28597999}
-  targetPosition: {fileID: 903532047}
-  playerAnim: {fileID: 2077011508}
-  walkingSprites:
-  - {fileID: 21300000, guid: b1876aacbc15c8d42bba65054f7daf9c, type: 3}
+  _countdownText: {fileID: 28597999}
+  _targetPosition: {fileID: 903532047}
+  _playerAnim: {fileID: 2077011508}
+  _walkingSprites:
   - {fileID: 21300000, guid: ede85378a69610e4abf8478d4531d7e0, type: 3}
+  - {fileID: 21300000, guid: b1876aacbc15c8d42bba65054f7daf9c, type: 3}
   - {fileID: 21300000, guid: 376cb7f29f6354e449af2dc25e56a6fe, type: 3}
-  spriteRenderer: {fileID: 2077011512}
+  _spriteRenderer: {fileID: 2077011512}
 --- !u!114 &850535132
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2745,7 +2761,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7474726166359645110, guid: 117dd61c8cd149447896f77776acdcfc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -1.86
       objectReference: {fileID: 0}
     - target: {fileID: 7474726166359645110, guid: 117dd61c8cd149447896f77776acdcfc, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3012,7 +3028,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7474726166359645110, guid: 117dd61c8cd149447896f77776acdcfc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.44188
+      value: 0.18
       objectReference: {fileID: 0}
     - target: {fileID: 7474726166359645110, guid: 117dd61c8cd149447896f77776acdcfc, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3325,7 +3341,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7474726166359645110, guid: c26856aed54be204ea22d7646f43d89b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.53
       objectReference: {fileID: 0}
     - target: {fileID: 7474726166359645110, guid: c26856aed54be204ea22d7646f43d89b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5040,18 +5056,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b65bc84bef6a496c94ed8acce0021bbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerConfig:
+  _playerConfig:
     Acceleration: 2
     TurnSpeed: 1.5
     Health: 100
-  playerPrefab: {fileID: 7743410545525718610, guid: a59bd916bbea224458e03ff20b144133, type: 3}
-  enemyPrefab: {fileID: 1870894137029939153, guid: 6275e9b3b50c8fe4d9ab6bec6eae6721, type: 3}
-  playerSpawnPoint: {fileID: 903532047}
-  policeSpawnArea: {fileID: 1086654176}
-  policeSpawnAreaLayerMask:
+  _playerPrefab: {fileID: 7743410545525718610, guid: a59bd916bbea224458e03ff20b144133, type: 3}
+  _enemyPrefab: {fileID: 1870894137029939153, guid: 6275e9b3b50c8fe4d9ab6bec6eae6721, type: 3}
+  _playerSpawnPoint: {fileID: 903532047}
+  _policeSpawnArea: {fileID: 1086654176}
+  _policeSpawnAreaLayerMask:
     serializedVersion: 2
-    m_Bits: 2056
-  attemptsToSpawnPolice: 10
+    m_Bits: 72
+  _attemptsToSpawnPolice: 10
+  _spawnRate: 60
 --- !u!1 &2022750861
 GameObject:
   m_ObjectHideFlags: 0

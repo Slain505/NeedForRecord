@@ -6,8 +6,7 @@ namespace Boosters
 { 
     public class MagnetBooster : Booster 
     {
-        [SerializeField]
-        private Collider2D _magnetCollider;
+        [SerializeField] private Collider2D _magnetCollider;
         private bool _isActive;
         
         protected override void ActivateEffect() 

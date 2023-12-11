@@ -1,24 +1,24 @@
 ﻿using Player;
 using UI;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Core
 {
     public class GameplayController : MonoBehaviour
     {
-        [SerializeField] private PlayerConfig playerConfig;
-        [SerializeField] private GameObject playerPrefab;
-        [SerializeField] private GameObject enemyPrefab; 
-        [SerializeField] private Transform playerSpawnPoint;
-        [SerializeField] private BoxCollider2D policeSpawnArea;
-        [SerializeField] private LayerMask policeSpawnAreaLayerMask;
-        [SerializeField] private int attemptsToSpawnPolice = 10;
-        [SerializeField] private float spawnRate;
-        public static GameplayController Instance { get; private set; }
-        private Player.Player player;
-
+        [SerializeField] private PlayerConfig _playerConfig;
+        [SerializeField] private GameObject _playerPrefab;
+        [SerializeField] private GameObject _enemyPrefab; 
+        [SerializeField] private Transform _playerSpawnPoint;
+        [SerializeField] private BoxCollider2D _policeSpawnArea;
+        [SerializeField] private LayerMask _policeSpawnAreaLayerMask;
+        [SerializeField] private int _attemptsToSpawnPolice = 10;
+        [SerializeField] private float _spawnRate;
         private int _score;
         private int _playerHealth = 100;
+        public static GameplayController Instance { get; private set; }
+        private Player.Player player;
         
         public GameplayController()
         {
@@ -27,9 +27,9 @@ namespace Core
         
         private void SpawnPlayer()
         {
-            var playerStart = Instantiate(playerPrefab, playerSpawnPoint.position, Quaternion.identity, transform);
+            var playerStart = Instantiate(_playerPrefab, _playerSpawnPoint.position, Quaternion.identity, transform);
             player = playerStart.GetComponent<Player.Player>();
-            player.Setup(playerConfig);
+            player.Setup(_playerConfig);
         }
         
         private void SpawnEnemy()
@@ -42,13 +42,13 @@ namespace Core
             Debug.Log("Spawn enemy called.");
             var spawned = false;
 
-            for (int i = 0; i < attemptsToSpawnPolice; i++)
+            for (int i = 0; i < _attemptsToSpawnPolice; i++)
             {
                 var spawnPosition = GetRandomPositionInSpawnArea();
 
                 if (!IsPositionOccupied(spawnPosition))
                 {
-                    Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
+                    Instantiate(_enemyPrefab, spawnPosition, Quaternion.identity);
                     spawned = true;
                     break;
                 }
@@ -56,7 +56,7 @@ namespace Core
 
             if (!spawned)
             {
-                Debug.Log("Failed to find an unoccupied position for police spawn after " + attemptsToSpawnPolice + " attempts.");
+                Debug.Log("Failed to find an unoccupied position for police spawn after " + _attemptsToSpawnPolice + " attempts.");
             }
         }
 
@@ -65,7 +65,7 @@ namespace Core
             var size = new Vector2(1.2000000f, 1.20000005f);
             var angle = 0f;
 
-            Collider2D[] collidersInArea = Physics2D.OverlapCapsuleAll(spawnPosition, size, CapsuleDirection2D.Vertical, angle, policeSpawnAreaLayerMask);
+            Collider2D[] collidersInArea = Physics2D.OverlapCapsuleAll(spawnPosition, size, CapsuleDirection2D.Vertical, angle, _policeSpawnAreaLayerMask);
 
             foreach (var collider in collidersInArea)
             {
@@ -86,12 +86,12 @@ namespace Core
 
         private void GameStartState()
         {
-            InvokeRepeating("SpawnEnemy", spawnRate + 4f, spawnRate);
+            InvokeRepeating("SpawnEnemy", _spawnRate + 4f, _spawnRate);
         }
 
         Vector2 GetRandomPositionInSpawnArea()
         {
-            Bounds bounds = policeSpawnArea.bounds;
+            Bounds bounds = _policeSpawnArea.bounds;
             var x = Random.Range(bounds.min.x, bounds.max.x);
             var y = Random.Range(bounds.min.y, bounds.max.y);
 

@@ -4,6 +4,5 @@ namespace Collectables
 {
     public class Coin : MonoBehaviour
     {
-       
     }
 }

@@ -19,7 +19,7 @@ namespace Player
             
             if (joystickObject != null)
             {
-                _joystick = joystickObject.GetComponent<JoystickController>();
+                _joystick = JoystickController.Instance;
             }
             
             

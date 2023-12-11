@@ -1,4 +1,3 @@
-using Core;
 using UI;
 using UnityEngine;
 
@@ -30,12 +29,13 @@ namespace Level
         }
     
         public static Level Instance { get; private set; }
-    
+        
         void Start()
         {
             Instance = this;
             Countdown.Instance.OnCountdownFinished += GameStartState;
             _score = 0;
+            Time.timeScale = 1f;
         }
 
         private void GameStartState()
@@ -51,20 +51,20 @@ namespace Level
 
         public void GameOver()
         {
+            Time.timeScale = 0f;
             _speed = 0;
         }
     
         public void Paused()
         {
             _savedSpeed = _speed;
-            _savedTimeScale = Time.timeScale;
             Time.timeScale = 0f;
             IsGamePaused = true;
         }
         
         public void Resumed()
         {
-            Time.timeScale = _savedTimeScale;
+            Time.timeScale = 1f;
             _speed = _savedSpeed;
             IsGamePaused = false;
         }
