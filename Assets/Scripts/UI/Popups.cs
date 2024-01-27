@@ -45,7 +45,7 @@ namespace UI
 
         private void OnRestartButtonClicked()
         {
-            Level.Level.Instance.Resumed();
+            //Level.Level.Instance.Resumed();
             SceneManager.LoadScene(1);
         }
 
@@ -54,7 +54,7 @@ namespace UI
             if (_pausePopup.activeSelf)
             {
                 _pausePopup.SetActive(false);
-                Level.Level.Instance.Resumed();
+                //Level.Level.Instance.Resumed();
             }
             else if (_optionPopup.activeSelf)
             {
@@ -68,14 +68,14 @@ namespace UI
             else
             {
                 _pausePopup.SetActive(true);
-                Level.Level.Instance.Paused();
+                //Level.Level.Instance.Paused();
             }
         }
 
         private void OnResumeButtonClicked()
         {
             _pausePopup.SetActive(false);
-            Level.Level.Instance.Resumed();
+            //Level.Level.Instance.Resumed();
         }
 
         private void OnOptionsButtonClicked()

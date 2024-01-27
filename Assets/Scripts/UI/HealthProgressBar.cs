@@ -10,10 +10,10 @@ namespace UI
         public int MinimumHealth = 0;
         private float _current;
 
-        public static HealthProgressBar Instance { get; private set; }
+        //public static HealthProgressBar Instance { get; private set; }
         void Start()
         {
-            Instance = this;
+        //    Instance = this;
         }
 
         void Update()

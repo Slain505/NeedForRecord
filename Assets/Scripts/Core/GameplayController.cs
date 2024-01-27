@@ -34,10 +34,10 @@ namespace Core
         
         private void SpawnEnemy()
         {
-            if (Level.Level.Instance.IsGamePaused)
-            {
-                return; 
-            }
+//            if (Level.Level.Instance.IsGamePaused)
+//            {
+//                return; 
+//            }
             
             Debug.Log("Spawn enemy called.");
             var spawned = false;
@@ -81,12 +81,13 @@ namespace Core
         private void Start()
         {
             SpawnPlayer();
-            Countdown.Instance.OnCountdownFinished += GameStartState;
+            GameStartState();
+            
         }
 
         private void GameStartState()
         {
-            InvokeRepeating("SpawnEnemy", _spawnRate + 4f, _spawnRate);
+            InvokeRepeating("SpawnEnemy", _spawnRate, _spawnRate);
         }
 
         Vector2 GetRandomPositionInSpawnArea()

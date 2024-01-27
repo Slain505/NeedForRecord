@@ -24,11 +24,11 @@ namespace UI
         public bool IsShieldActive;
         public bool IsAlive { get; set; }
     
-        public static BoosterProgressBar Instance { get; private set; }
+        //public static BoosterProgressBar Instance { get; private set; }
 
         void Start()
         {
-            Instance = this;
+        //    Instance = this;
             IsAlive = true;
         }
     

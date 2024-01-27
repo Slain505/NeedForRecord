@@ -10,11 +10,11 @@ namespace Core
         public bool IsGasButtonPressed { get; private set; }
         public bool IsBrakeButtonPressed { get; private set; }
         
-        public static PedalsController Instance { get; private set; }
+        //public static PedalsController Instance { get; private set; }
 
         private void Awake()
         {
-            Instance = this;
+            //Instance = this;
             foreach (var a in _gasButton.triggers)
             {
                 if(a.eventID == EventTriggerType.PointerDown)

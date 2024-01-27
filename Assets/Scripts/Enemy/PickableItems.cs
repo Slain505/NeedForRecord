@@ -10,7 +10,7 @@ using UnityEngine.Serialization;
 
 namespace Enemy
 {
-    public class Police : MonoBehaviour
+    public class PickableItems : MonoBehaviour
     {
         [SerializeField] private Sprite[] _policeSprites; 
         [SerializeField] private SpriteRenderer _SpriteRenderer;
@@ -50,20 +50,21 @@ namespace Enemy
         
         private void Start()
         {
-            Vector3 startPostion = transform.position + _startPositionOffset;
+            Vector3 startPostion = transform.position;
             transform.position = startPostion;
+            transform.DOMoveY(-transform.position.y - 100f, 100f).SetEase(Ease.OutCubic);
 
-            PoliceAnimation();
+        //    PoliceAnimation();
         }
         
         private void OnTriggerEnter2D(Collider2D other)
         {
-            if (other.TryGetComponent<BoosterPickUp>(out var boosterPickUp))
-            {
-                Debug.Log($"{boosterPickUp.Type} was destroyed by Police.");
-                Destroy(other.gameObject);
-            }
-            else if(other.TryGetComponent<Coin>(out var coinPickUp))
+            //if (other.TryGetComponent<BoosterPickUp>(out var boosterPickUp))
+            //{
+            //    Debug.Log($"{boosterPickUp.Type} was destroyed by Police.");
+            //    Destroy(other.gameObject);
+            //}
+            if(other.TryGetComponent<Coin>(out var coinPickUp))
             {
                 Debug.Log("Coin was destroyed by Police.");
                 Destroy(other.gameObject);
@@ -73,15 +74,15 @@ namespace Enemy
                 Debug.Log("Obstacle was destroyed by Police.");
                 Destroy(other.gameObject);
             }
-            else if(other.TryGetComponent<Police> (out var police))
-            {
-                Debug.LogError("FIX POLICE SPAWN!");
-            }
-            else if(other.TryGetComponent<Lifes> (out var lifes))
-            {
-                Debug.Log("Life was destroyed by Police.");
-                Destroy(other.gameObject);
-            }
+            //else if(other.TryGetComponent<Police> (out var police))
+            //{
+            //    Debug.LogError("FIX POLICE SPAWN!");
+            //}
+            //else if(other.TryGetComponent<Lifes> (out var lifes))
+            //{
+            //    Debug.Log("Life was destroyed by Police.");
+            //    Destroy(other.gameObject);
+            //}
         }
     }
 }

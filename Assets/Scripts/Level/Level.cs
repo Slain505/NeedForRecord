@@ -28,14 +28,14 @@ namespace Level
             }
         }
     
-        public static Level Instance { get; private set; }
+        //public static Level Instance { get; private set; }
         
         void Start()
         {
-            Instance = this;
-            Countdown.Instance.OnCountdownFinished += GameStartState;
-            _score = 0;
-            Time.timeScale = 1f;
+//            Instance = this;
+//            Countdown.Instance.OnCountdownFinished += GameStartState;
+//            _score = 0;
+//            Time.timeScale = 1f;
         }
 
         private void GameStartState()

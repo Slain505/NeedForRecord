@@ -52,9 +52,9 @@ namespace Player
         private int Die()
         {
             Destroy(gameObject);
-            Level.Level.Instance.GameOver();
+            //Level.Level.Instance.GameOver();
             Popups.Instance.OnPlayerDied();
-            BoosterProgressBar.Instance.IsAlive = false;
+            //BoosterProgressBar.Instance.IsAlive = false;
             UpdateCoinBalance();
             CancelInvoke("SpawnEnemy");
             return 0;
@@ -115,23 +115,23 @@ namespace Player
 
         private void CalculateCollision(Collider2D other)
         {
-            if (other.TryGetComponent<BoosterPickUp>(out var boosterPickUp))
-            {
-                foreach (var booster in _boosters)
-                {
-                    if (boosterPickUp.Type == booster.Type)
-                    {
-                        booster.Activate();
-                    }
-                    else
-                    {
-                        booster.DeactivateEffect();
-                    }
-                }
-                Debug.Log($"{boosterPickUp.Type} was taken.");
-                Destroy(other.gameObject);
-            }
-            else if(other.TryGetComponent<Coin>(out var coinPickUp))
+            //if (other.TryGetComponent<BoosterPickUp>(out var boosterPickUp))
+            //{
+            //    foreach (var booster in _boosters)
+            //    {
+            //        if (boosterPickUp.Type == booster.Type)
+            //        {
+            //            booster.Activate();
+            //        }
+            //        else
+            //        {
+            //            booster.DeactivateEffect();
+            //        }
+            //    }
+            //    Debug.Log($"{boosterPickUp.Type} was taken.");
+            //    Destroy(other.gameObject);
+            //}
+            if(other.TryGetComponent<Coin>(out var coinPickUp))
             {
                 Debug.Log("Coin was taken.");
                 coinPickUp.transform.DOMove(this.transform.position, 0.5f).OnComplete(() =>
@@ -146,47 +146,47 @@ namespace Player
                 if (!Invincible)
                 {
                     Health -= obstacle.Damage;
-                    HealthProgressBar.Instance.SetHealth(Health);
-                    StartCoroutine(OnSlowByObstacle(obstacle.SpeedPenalty));
+                    //HealthProgressBar.Instance.SetHealth(Health);
+                    //StartCoroutine(OnSlowByObstacle(obstacle.SpeedPenalty));
                 }
                 Destroy(obstacle.gameObject);
             }
-            else if(other.TryGetComponent<Police> (out var police))
-            {
-                Debug.Log("Police hit.");
-                Health -= police.Damage;
-            }
-            else if(other.TryGetComponent<Lifes> (out var lifes))
-            {
-                Debug.Log("Life was taken.");
-                lifes.transform.DOMove(this.transform.position, 0.5f).OnComplete(() =>
-                {
-                    if(Health < 100)
-                    {
-                        Health += 25;
-                    }
-                    if(Health > 100)
-                    {
-                        Health = 100;
-                    }
-                
-                    HealthProgressBar.Instance.SetHealth(Health);
-                    Destroy(lifes.gameObject);
-                });
-            }
+            //else if(other.TryGetComponent<Police> (out var police))
+            //{
+            //    Debug.Log("Police hit.");
+            //    Health -= police.Damage;
+            //}
+            //else if(other.TryGetComponent<Lifes> (out var lifes))
+            //{
+            //    Debug.Log("Life was taken.");
+            //    lifes.transform.DOMove(this.transform.position, 0.5f).OnComplete(() =>
+            //    {
+            //        if(Health < 100)
+            //        {
+            //            Health += 25;
+            //        }
+            //        if(Health > 100)
+            //        {
+            //            Health = 100;
+            //        }
+            //    
+            //        //HealthProgressBar.Instance.SetHealth(Health);
+            //        Destroy(lifes.gameObject);
+            //    });
+            //}
         }
         
-        private IEnumerator OnSlowByObstacle(float speedPenalty)
-        {
-            Level.Level.Instance.Speed -= speedPenalty;
-            yield return new WaitForSeconds(15f);
-            Level.Level.Instance.Speed += speedPenalty;
-        }
+//        private IEnumerator OnSlowByObstacle(float speedPenalty)
+//        {
+//            Level.Level.Instance.Speed -= speedPenalty;
+//            yield return new WaitForSeconds(15f);
+//            Level.Level.Instance.Speed += speedPenalty;
+//        }
         
         void Start()
         {
             Instance = this;
-            HealthProgressBar.Instance.SetHealth(Health);
+            //HealthProgressBar.Instance.SetHealth(Health);
             _playerController = gameObject.AddComponent<PlayerController>();
         }
         
@@ -205,14 +205,14 @@ namespace Player
                     break;
             }
 
-            if (PedalsController.Instance.IsGasButtonPressed)
-            {
-                MoveForward();
-            }
-            else if(PedalsController.Instance.IsBrakeButtonPressed)
-            {
-                MoveBackward();
-            }
+            //if (PedalsController.Instance.IsGasButtonPressed)
+            //{
+            //    MoveForward();
+            //}
+            //else if(PedalsController.Instance.IsBrakeButtonPressed)
+            //{
+            //    MoveBackward();
+            //}
         }
 
         private void OnTriggerEnter2D(Collider2D other)
