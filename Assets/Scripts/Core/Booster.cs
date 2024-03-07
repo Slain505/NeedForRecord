@@ -3,21 +3,24 @@ using UnityEngine;
 
 namespace Core
 {
-    public enum BoosterType
-    {
-        None,
-        Shield,
-        Nitro,
-        Magnet,
-    }
+    /// 
+    /// Depricated for further use
+    /// 
+    //public enum BoosterType
+    //{
+    //    None,
+    //    Shield,
+    //    Nitro,
+    //    Magnet,
+    //}
     
     public class Booster : MonoBehaviour
     {
         public GameObject Visuals;
-        public BoosterType Type;
+        //public BoosterType Type;
         public float Duration = 15f;
         protected virtual void ActivateEffect() {Visuals.SetActive(true);}
-        public virtual void DeactivateEffect() {Visuals.SetActive(false); }
+        protected virtual void DeactivateEffect() {Visuals.SetActive(false); }
         
         public static Booster Instance { get; private set; }
 
@@ -26,16 +29,16 @@ namespace Core
             Instance = this;
         }
 
-        public void Activate() 
-        {
-            ActivateEffect();
-            StartCoroutine(DeactivateAfterTime(Duration));
-        }
+        //public void Activate() 
+        //{
+        //    ActivateEffect();
+        //    StartCoroutine(DeactivateAfterTime(Duration));
+        //}
 
-        private IEnumerator DeactivateAfterTime(float time) 
-        {
-            yield return new WaitForSeconds(time);
-            DeactivateEffect();
-        }
+        //private IEnumerator DeactivateAfterTime(float time) 
+        //{
+        //    yield return new WaitForSeconds(time);
+        //    DeactivateEffect();
+        //}
     }
 }

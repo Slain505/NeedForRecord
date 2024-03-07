@@ -2,8 +2,12 @@
 
 namespace Core
 {
-    public class BoosterPickUp : MonoBehaviour
-    {
-        public BoosterType Type;
-    }
+    /// <summary>
+    /// Depricated for further use
+    /// </summary>
+
+    //public class BoosterPickUp : MonoBehaviour
+    //{
+    //    public BoosterType Type;
+    //}
 }

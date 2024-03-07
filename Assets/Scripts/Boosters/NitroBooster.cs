@@ -3,10 +3,15 @@ using UI;
 
 namespace Boosters
 {
+    /// <summary>
+    /// Depricated for further use
+    /// </summary>
+    
+    
     //public class NitroBooster : Booster
     //{
     //    private bool _isActive;
-//
+    //
     //    protected override void ActivateEffect()
     //    {
     //        base.ActivateEffect();
@@ -15,7 +20,7 @@ namespace Boosters
     //        BoosterProgressBar.Instance.IsNitroActive = true;
     //        BoosterProgressBar.Instance.SetTime(15f);
     //    }
-//
+    //
     //    public override void DeactivateEffect()
     //    {
     //        if (!_isActive) return;

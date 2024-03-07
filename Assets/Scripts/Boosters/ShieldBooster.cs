@@ -4,6 +4,10 @@ using UnityEngine;
 
 namespace Boosters
 {
+    /// <summary>
+    /// Depricated for further use
+    /// </summary>
+    
     //public class ShieldBooster : Booster 
     //{
     //    [SerializeField] private Player.Player _player;
@@ -17,7 +21,7 @@ namespace Boosters
     //        BoosterProgressBar.Instance.IsShieldActive = true;
     //        BoosterProgressBar.Instance.SetTime(15f);
     //    }
-//
+    //
     //    public override void DeactivateEffect() 
     //    {
     //        if (!_isActive) return;

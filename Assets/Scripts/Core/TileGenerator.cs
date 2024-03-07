@@ -3,6 +3,10 @@ using UnityEngine;
 
 namespace Core
 {
+    /// <summary>
+    /// Depricated for further use
+    /// </summary>
+    
     //public class TileGenerator : MonoBehaviour
     //{
     //    [SerializeField] private Transform _levelObject;
@@ -11,7 +15,7 @@ namespace Core
     //    private float _spawnPos = 0;
     //    private float _tileLength = 9.992f;
     //    private int _startTiles = 6;
-//
+    //
     //    private void SpawnTile(int tileIndex)
     //    {
     //        GameObject nextTile = Instantiate(tilePrefabs[tileIndex], transform.up * _spawnPos, transform.rotation, _levelObject);
@@ -33,7 +37,7 @@ namespace Core
     //            SpawnTile(Random.Range(0,tilePrefabs.Length));
     //        }
     //    }
-//
+    //
     //    void Update()
     //    {
     //        var lastTilePosition = float.MinValue;
@@ -41,7 +45,7 @@ namespace Core
     //        {
     //            lastTilePosition = _activeTiles[_activeTiles.Count - 1].transform.position.y;
     //        }
-//
+    //
     //        if (lastTilePosition < transform.position.y + 10)
     //        {
     //            SpawnTile(Random.Range(0, tilePrefabs.Length));

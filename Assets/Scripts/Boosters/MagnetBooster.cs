@@ -4,6 +4,10 @@ using UnityEngine;
 
 namespace Boosters
 { 
+    /// <summary>
+    /// Depricated for further use
+    /// </summary>
+    
     //public class MagnetBooster : Booster 
     //{
     //    [SerializeField]  private Collider2D _magnetCollider;
