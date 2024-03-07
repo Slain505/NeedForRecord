@@ -12,8 +12,8 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: TestAssignment
-  productName: NeedForRecord
+  companyName: Aplisus
+  productName: Save Aplisens!
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -287,7 +287,7 @@ PlayerSettings:
   - m_BuildTarget: 
     m_Icons:
     - serializedVersion: 2
-      m_Icon: {fileID: 2800000, guid: 5552e2c94193101478f195d16d3d60a5, type: 3}
+      m_Icon: {fileID: 2800000, guid: be1c843d47c875f4c8450a619c38df83, type: 3}
       m_Width: 128
       m_Height: 128
       m_Kind: 0

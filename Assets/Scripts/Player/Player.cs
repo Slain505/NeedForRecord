@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Collectables;
@@ -7,20 +8,22 @@ using Enemy;
 using Obstacles;
 using UI;
 using UnityEngine;
+using UnityEngine.Networking;
+using UnityEngine.UI;
 
 namespace Player
 {
     public class Player : MonoBehaviour
     {
-        [SerializeField] private List<Booster> _boosters;
+        //[SerializeField] private List<Booster> _boosters;
+        public SpriteRenderer playerImage;
         private PlayerController _playerController;
         private Rigidbody2D _rb;
-        
         public static Player Instance { get; private set; }
         public bool Invincible { get; set; }
         private float Acceleration { get; set; }
         private float TurnSpeed { get; set; }
-        private int Score { get;  set; }
+        private int Score { get => Level.Level.Score;  set => Level.Level.Score = value; }
 
         private int Coins
         {
@@ -52,7 +55,7 @@ namespace Player
         private int Die()
         {
             Destroy(gameObject);
-            //Level.Level.Instance.GameOver();
+            Level.Level.Instance.GameOver();
             Popups.Instance.OnPlayerDied();
             //BoosterProgressBar.Instance.IsAlive = false;
             UpdateCoinBalance();
@@ -134,11 +137,15 @@ namespace Player
             if(other.TryGetComponent<Coin>(out var coinPickUp))
             {
                 Debug.Log("Coin was taken.");
-                coinPickUp.transform.DOMove(this.transform.position, 0.5f).OnComplete(() =>
-                {
-                    Coins += 10;
-                    Destroy(coinPickUp.gameObject);
-                });
+                //coinPickUp.transform.DOMove(this.transform.position, 0.5f).OnComplete(() =>
+                //{
+                //    Coins += 10;
+                //    Score += 10;
+                //    Destroy(coinPickUp.gameObject);
+                //});
+                Coins += 10;
+                Score += 10;
+                Destroy(coinPickUp.gameObject);
             }
             else if(other.TryGetComponent<Obstacle>(out var obstacle))
             {
@@ -182,12 +189,23 @@ namespace Player
 //            yield return new WaitForSeconds(15f);
 //            Level.Level.Instance.Speed += speedPenalty;
 //        }
-        
+
+        private void Awake()
+        {
+            DontDestroyOnLoad(gameObject);
+        }
+
         void Start()
         {
             Instance = this;
             //HealthProgressBar.Instance.SetHealth(Health);
             _playerController = gameObject.AddComponent<PlayerController>();
+            string imagePath = PlayerPrefs.GetString("PlayerSpritePath", "");
+            if (!string.IsNullOrEmpty(imagePath))
+            {
+                // Завантаження спрайту зі збереженого шляху
+                StartCoroutine(LoadImage(imagePath));
+            }
         }
         
         void Update()
@@ -215,6 +233,24 @@ namespace Player
             //}
         }
 
+        IEnumerator LoadImage(string path)
+        {
+            UnityWebRequest www = UnityWebRequestTexture.GetTexture("file://" + path);
+            yield return www.SendWebRequest();
+
+            if (www.isNetworkError || www.isHttpError)
+            {
+                Debug.LogError(www.error);
+            }
+            else
+            {
+                // Завантаження успішне, встановлення спрайту гравця
+                Texture2D texture = ((DownloadHandlerTexture)www.downloadHandler).texture;
+                Sprite sprite = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), new Vector2(0.5f, 0.5f), 100.0f);
+                playerImage.sprite = sprite;
+            }
+        }
+        
         private void OnTriggerEnter2D(Collider2D other)
         {
             CalculateCollision(other);

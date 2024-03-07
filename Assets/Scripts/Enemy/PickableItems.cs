@@ -22,30 +22,18 @@ namespace Enemy
         public int Damage;
 
         //Appearing animation + chase logic
-        private void PoliceAnimation()
-        {
-            Sequence sequence = DOTween.Sequence();
-            sequence.Append(transform.DOMove(transform.position - _startPositionOffset, _appearingDuration).SetEase(Ease.OutCubic))
-                .Append(transform.DOMove(transform.position + new Vector3(0, 15, 0), CalculateDurationOfMove())).SetEase(Ease.Linear)
-                .AppendCallback(() => Destroy(gameObject));
-        }
+        //private void PoliceAnimation()
+        //{
+        //    Sequence sequence = DOTween.Sequence();
+        //    sequence.Append(transform.DOMove(transform.position - _startPositionOffset, _appearingDuration).SetEase(Ease.OutCubic))
+        //        .Append(transform.DOMove(transform.position + new Vector3(0, 15, 0), CalculateDurationOfMove())).SetEase(Ease.Linear)
+        //        .AppendCallback(() => Destroy(gameObject));
+        //}
 
         //Bad naming - this method is calculating which Police sprite to use and how fast it should move 
-        private float CalculateDurationOfMove()
+        private void CalculateDurationOfMove()
         {
             _SpriteRenderer.sprite = _policeSprites[UnityEngine.Random.Range(0, _policeSprites.Length)];
-            if (_SpriteRenderer.sprite == _policeSprites[0])
-            {
-                //Speedy version
-                return _speedyPoliceSpeed;
-            }
-            else if (_SpriteRenderer.sprite == _policeSprites[1])
-            {
-                //Regular one
-                return _regularPoliceSpeed;
-            }
-            //Default
-            return _regularPoliceSpeed;
         }
         
         private void Start()
@@ -54,6 +42,7 @@ namespace Enemy
             transform.position = startPostion;
             transform.DOMoveY(-transform.position.y - 100f, 100f).SetEase(Ease.OutCubic);
 
+            CalculateDurationOfMove();
         //    PoliceAnimation();
         }
         

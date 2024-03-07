@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7743410545525718620}
   - component: {fileID: 7743410545525718611}
-  - component: {fileID: 7743410545525718621}
+  - component: {fileID: 8933066310156595818}
   - component: {fileID: 7743410545525718623}
   - component: {fileID: -3826058737227960184}
   m_Layer: 6
@@ -87,7 +87,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7743410545525718621
+--- !u!114 &8933066310156595818
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8572f28a071bb184b9e28cd395a232a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _boosters: []
+  playerImage: {fileID: 7743410545525718611}
 --- !u!70 &7743410545525718623
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

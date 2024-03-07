@@ -11,7 +11,7 @@ namespace Level
         private float _currentLerpTime;
         private float _speed = 0f;
         private float _savedSpeed;
-        private int _score;
+        public static int Score {get; set;}
         
         public bool IsGamePaused { get; set; }
         private float _savedTimeScale { get; set; }
@@ -28,14 +28,13 @@ namespace Level
             }
         }
     
-        //public static Level Instance { get; private set; }
+        public static Level Instance { get; private set; }
         
         void Start()
         {
-//            Instance = this;
-//            Countdown.Instance.OnCountdownFinished += GameStartState;
-//            _score = 0;
-//            Time.timeScale = 1f;
+            Instance = this;
+            Score = 0;
+            Time.timeScale = 1f;
         }
 
         private void GameStartState()
@@ -45,7 +44,7 @@ namespace Level
 
         void Update()
         {
-            MoveTiles();
+            //MoveTiles();
             CountScore();
         }
 
@@ -71,8 +70,8 @@ namespace Level
 
         private void CountScore()
         {
-            _score += (int)(_speed * (Time.deltaTime * 100));
-            PlayerPrefs.SetInt("Score", _score);
+            //_score += (int)(_speed * (Time.deltaTime * 100));
+            PlayerPrefs.SetInt("Score", Score);
             //Debug.Log(_score);
         }
 
