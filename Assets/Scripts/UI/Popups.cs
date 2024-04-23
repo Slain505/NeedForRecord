@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -20,7 +21,10 @@ namespace UI
         [SerializeField] private Button _resetPlayerPrefsButton;
         [SerializeField] private Text _yourScoreText;
         [SerializeField] private Text _highScoreText;
-    
+        public event Action GamePaused;
+        public event Action GameResumed;
+        public event Action GameOver;
+        
         public static Popups Instance { get; private set; }
     
         void Start()
@@ -45,16 +49,17 @@ namespace UI
 
         private void OnRestartButtonClicked()
         {
-            Level.Level.Instance.Resumed();
+            Level.Level.Instance.OnGameResumed();
             SceneManager.LoadScene(1);
         }
 
         private void OnPauseButtonClicked()
         {
+            GamePaused?.Invoke();
             if (_pausePopup.activeSelf)
             {
                 _pausePopup.SetActive(false);
-                Level.Level.Instance.Resumed();
+                Level.Level.Instance.OnGameResumed();
             }
             else if (_optionPopup.activeSelf)
             {
@@ -68,14 +73,15 @@ namespace UI
             else
             {
                 _pausePopup.SetActive(true);
-                Level.Level.Instance.Paused();
+                Level.Level.Instance.OnGamePaused();
             }
         }
 
         private void OnResumeButtonClicked()
         {
+            GameResumed?.Invoke();
             _pausePopup.SetActive(false);
-            Level.Level.Instance.Resumed();
+            Level.Level.Instance.OnGameResumed();
         }
 
         private void OnOptionsButtonClicked()
@@ -92,6 +98,7 @@ namespace UI
 
         public void OnPlayerDied()
         {
+            GameOver?.Invoke();
             _endGamePopup.SetActive(true);
             _highScoreText.text = PlayerPrefs.GetInt("HighScore").ToString();
             _yourScoreText.text = PlayerPrefs.GetInt("Score").ToString();

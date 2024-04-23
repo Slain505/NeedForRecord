@@ -228,7 +228,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Game over
+  m_Text: Paused
 --- !u!114 &2222380428276121381
 MonoBehaviour:
   m_ObjectHideFlags: 0

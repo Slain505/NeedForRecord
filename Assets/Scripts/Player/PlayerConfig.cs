@@ -6,5 +6,6 @@
         public float Acceleration;
         public float TurnSpeed;
         public int Health;
+        public float Speed;
     }
 }
