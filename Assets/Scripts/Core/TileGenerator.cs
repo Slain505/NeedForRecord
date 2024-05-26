@@ -29,7 +29,7 @@ namespace Core
             try
             {
                 // Found player transform
-                if(_playerTransform != null) return;
+                if (_playerTransform != null);
                 _playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
             }
             catch

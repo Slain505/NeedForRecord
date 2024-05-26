@@ -114,7 +114,7 @@ namespace Player
 
         private void MoveForward()
         {
-            if (transform.position.y <= 3.5f)
+            if (transform.position.y <= 8.5f)
             {
                 Vector2 pos = transform.position;
                 pos.y += Acceleration * Time.deltaTime;
@@ -124,7 +124,7 @@ namespace Player
 
         private void MoveBackward()
         {
-            if (transform.position.y >= -4.5f)
+            if (transform.position.y >= -8.5f)
             {
                 Vector2 pos = transform.position;
                 pos.y -= Acceleration * Time.deltaTime;
@@ -314,11 +314,12 @@ namespace Player
                     break;
             }
 
-            if (PedalsController.Instance.IsGasButtonPressed)
+            //Not in use (for now)
+            if (PedalsController.Instance != null && PedalsController.Instance.IsGasButtonPressed)
             {
                 MoveForward();
             }
-            else if(PedalsController.Instance.IsBrakeButtonPressed)
+            else if(PedalsController.Instance != null && PedalsController.Instance.IsBrakeButtonPressed)
             {
                 MoveBackward();
             }
