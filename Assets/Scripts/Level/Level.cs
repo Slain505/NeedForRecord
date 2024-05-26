@@ -17,7 +17,7 @@ namespace Level
         {
             Instance = this;
             Countdown.Instance.OnCountdownFinished += OnGameStartState;
-            GameStart += OnGameStartState;
+            //GameStart += OnGameStartState;
             Popups.Instance.GameOver += OnGameOver;
             Popups.Instance.GamePaused += OnGamePaused;
             Popups.Instance.GameResumed += OnGameResumed;
@@ -45,6 +45,6 @@ namespace Level
             IsGamePaused = false;
         }
 
-        public event Action GameStart;
+        //public event Action GameStart;
     }
 }

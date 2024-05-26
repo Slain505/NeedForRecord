@@ -18,7 +18,7 @@ namespace Enemy
         [SerializeField] private float _regularPoliceSpeed;
         private Vector3 _startPositionOffset = new Vector3(0, -6, 0);
         private float _appearingDuration = 3f;
-        private float _moveDuration = 3f;
+        //private float _moveDuration = 3f;
         public int Damage;
 
         //Appearing animation + chase logic

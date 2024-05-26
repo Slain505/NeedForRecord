@@ -11,7 +11,7 @@ namespace Core
         [SerializeField] private GameObject _playerPrefab;
         [SerializeField] private Transform _playerSpawnPoint;
         private int _score;
-        private int _playerHealth = 100;
+        //private int _playerHealth = 100;
         private Player.Player player;
         
         private void SpawnPlayer()

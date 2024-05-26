@@ -26,16 +26,19 @@ namespace Core
 
         private void Update()
         {
-            try
+            if (_playerTransform == null)
             {
-                // Found player transform
-                if (_playerTransform != null);
-                _playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
-            }
-            catch
-            {
-                // If player is not found, return
-                return;
+                try
+                {
+                    // Found player transform
+                    //if (_playerTransform != null);
+                    _playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+                }
+                catch
+                {
+                    // If player is not found, return
+                    return;
+                }
             }
             
             // If player is close to the last tile, spawn new tile and delete the first one
