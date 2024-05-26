@@ -17,7 +17,7 @@ namespace Player
         [SerializeField] private Camera _camera;
         private PlayerController _playerController;
         private Rigidbody2D _rb;
-        
+
         public static Player Instance { get; private set; }
         public bool Invincible { get; set; }
         private float Acceleration { get; set; }
@@ -325,6 +325,7 @@ namespace Player
             }
 
             CountScore();
+            
             _camera.transform.position = new Vector3(_camera.transform.position.x, transform.position.y + 2.5f, _camera.transform.position.z);
         }
 

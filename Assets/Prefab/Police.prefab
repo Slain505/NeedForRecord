@@ -51,8 +51,8 @@ MonoBehaviour:
   - {fileID: -13826999, guid: 081ba4c39e1690348b1787dd07df1b6d, type: 3}
   - {fileID: -1183604774, guid: 081ba4c39e1690348b1787dd07df1b6d, type: 3}
   _SpriteRenderer: {fileID: 2828539107371511886}
-  _speedyPoliceSpeed: 15
-  _regularPoliceSpeed: 5
+  _speedyPoliceSpeed: 30
+  _regularPoliceSpeed: 15
   Damage: 100
 --- !u!70 &1354609640332813647
 CapsuleCollider2D:
